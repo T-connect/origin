@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+     rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+    crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+         *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4{
+  font-family: 'Merriweather', serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* body{
+  overflow-x: hidden;
+} */
+
+header{
+    height: 100vh;
+    width: 100%;
+    /* background: linear-gradient(rgba(9, 95, 55, 0.75), rgba(9, 95, 55, 0.75)),
+    url("images/pexels-ekaterina-bolovtsova-4048772.jpg") no-repeat center center/cover; */
+    background: linear-gradient(rgba(97, 68, 68, 0.7), rgba(0, 0, 0, 1)),
+    url("images/david-rotimi-LxENUKJXh_k-unsplash.jpg") no-repeat center center/cover;
+    /* background-color: rgb(9, 95, 55); */
+    /* background: rgb(205, 213, 221); */
+    /* background-color: rgb(0, 0, 0); */
+    color: white;
+    /* padding: 3rem 5rem; */
+}
+
+.text-success{
+  color: rgb(0, 100, 0);
+}
+
+/* Navbar section */
+
+.navbar{
+  width: 100%;
+  /* border-bottom: 1px solid rgb(99, 179, 99); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 0.2rem 0.8rem rgba(95, 95, 95, 0.575);
+}
+
+.navbar a{
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-nav a:hover, .navbar-nav a:active, .navbar-nav a:focus{
+    color: #007e33;
+}
+
+.nav-item .active{
+    color: #007e33;
+    border-bottom: 3px solid #007e33;
+}
+
+.navbar-brand{
+    font-size: 1.5rem;
+}
+
+.brand-span{
+  color: #007e33;
+}
+
+/* main content */
+
+.header-section{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: 50px;
+}
+
+header section .container{
+    height: 90%;
+    /* width: 60%; */
+    /* padding: 0 6rem; */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 2.3rem;
+}
+
+.important{
+    /* color: rgb(135, 177, 135); */
+    color: yellowgreen;
+    font-weight: bolder;
+}
+
+.smaller{
+    /* color: lightgrey; */
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.btn{
+    font-weight: 600;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.get-btn{
+  /* background-color: #59C579; */
+  /* background: linear-gradient(90deg, rgb(0, 100, 0), rgb(99, 179, 99)); */
+  background-color: #007e33;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  margin-top: 1.5rem;
+} 
+
+.get-btn:hover{
+  /* background: linear-gradient(90deg, rgb(99, 179, 99), rgb(0, 100, 0)); */
+  background-color: #1c924b;
+  color: white;
+}
+
+.anime{
+  width: 100%;
+  height: 65%;
+  border-radius: 0.5rem;
+  /* object-fit: cover; */
+}
+
+.about-section{
+  background-color: white;
+  /* background: linear-gradient(90deg, rgb(99, 179, 99), rgb(0, 100, 0)); */
+  color: black;
+  height: 100vh;
+  padding-top: 80px;
+}
+
+.about-section .container{
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-column-gap: 3rem;
+  padding-right: 2rem;
+}
+
+
+.globe{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about{
+  letter-spacing: 0.2rem;
+}
+
+
+
+.about::after {
+  display: block;
+  content: "";
+  width: 6rem;
+  height: 0.2rem;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: rgb(99, 179, 99);
+  margin-top: 0.8rem;
+  margin-bottom: 3rem;
+  margin-left: 0.8rem;
+}
+
+.faq-section{
+  background-color: rgb(235, 233, 233);
+  color: black;
+  height: max-content;
+  padding: 40px 0;
+  padding-top: 70px;
+}
+
+.faq{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.2rem;
+}
+
+.faq::after {
+  display: block;
+  content: "";
+  width: 4rem;
+  height: 0.2rem;
+  background-color: rgb(99, 179, 99);
+  margin-top: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.contact-section{
+  background: rgb(235, 233, 233);
+  height: max-content;
+  padding-bottom: 50px; 
+}
+
+
+/* Login section */
+
+.login-form{
+    width: 30vw;
+    background-color: white; 
+    background: white;
+    color: black;
+    padding: 2.5rem 2rem;
+    border-radius: 5px;
+    position: relative;
+}
+
+.login-section{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form input{
+    width: 80%;
+    background: transparent;
+    color: black;
+    border: none;
+    outline: none;
+}
+
+.login-form .btn{
+    background-color: #007e33;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.login-form .btn:hover{
+    background-color: #03993f;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.login-detail{
+    border-bottom: 1px solid #007e33;
+}
+
+.form-check-input{
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+
+ .close-login{
+  font-size: 2.3rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: grey;
+} 
+
+.contact-header{
+  /* margin-bottom: 130px; */
+  padding: 2rem;
+  padding-top: 4rem;
+  color: white;
+  height: 60vh;
+  /* background: linear-gradient(90deg, rgb(0, 100, 0), rgb(99, 179, 99)); */
+  background: linear-gradient(rgba(9, 95, 55, 0.75), rgba(9, 95, 55, 0.75)),
+    url("images/pexels-kelly-lacy-4372125.jpg") no-repeat center center/cover;
+    
+}
+
+.contact__heading {
+  /* font-size: 3rem; */
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact__heading::after {
+  display: block;
+  content: "";
+  width: 10rem;
+  height: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.808);
+  margin-top: 1rem;
+}
+
+.contact__subheading {
+  font-size: 1.2rem;
+  /* font-weight: 300; */
+  text-align: center;
+  opacity: 0.9;
+  /* line-height: 2rem; */
+}
+
+
+/* Form  */
+.contact-form {
+  /* transform: skewY(7deg); */
+  width: 50%;
+  margin: auto;
+  margin-top: -150px;
+  padding: 3rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.336);
+  color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.form__name {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1.5rem;
+}
+
+.form__sub {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+.message1 {
+  height: 2.3rem;
+  margin-bottom: 1.2rem;
+  background-color: rgb(224, 221, 221);
+  border: none;
+  border-radius: 4px;
+  padding: 0 1rem;
+}
+
+.message {
+  height: 6.5rem;
+  margin-bottom: 1.2rem;
+  background-color: rgb(224, 221, 221);
+  border: none;
+  border-radius: 4px;
+  padding: 0 1rem;
+}
+
+.message1:active, .message1:focus, .message:active, .message:focus{
+  border: 1px solid grey;
+  outline: none;
+  background-color: rgb(224, 221, 221);
+}
+
+
+.btn__form {
+  outline: none;
+  display: block;
+  background: #007e33;
+  color: white;
+  border: none;
+  padding: 1rem;
+  margin: 1rem auto;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn__form:hover, .btn__form:focus{
+  background-color: #1c924b;
+  color: white;
+}
+
+/* button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+} */
+
+footer{
+  height: max-content;
+  background-color: grey;
+}
+
+.quest{
+  background-color: white;
+  width: 70vw;
+  height: 80px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(95, 95, 95, 0.575);
+}
+
+.fa-plus{
+  font-size: 1.5rem;
+  color: rgb(64, 124, 64);
+}
+
+.terms a:hover{
+  text-decoration: underline;
+}
+
+.copyright{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: lightgrey;
+  /* background-color: red; */
+}
+
+
+.times{
+  display: none;
+  color: grey;
+  display: none;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 1300px) {
+  .contact-form{
+    width: 60vw;
+  }
+
+  .contact-header{
+    height: 55vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header{
+    height: 65vh;
+  }
+
+  .about-section{
+    height: max-content;
+    padding-bottom: 50px;
+  }
+
+  .about-section .container{
+  grid-template-columns: 42% 58%;
+  grid-column-gap: 2rem;
+}
+
+  .contact-header{
+    height: 30vh;
+  }
+
+  .contact-form{
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  header{
+  height: max-content;
+}
+
+.fa-bars{
+  color: #007e33;
+  font-size: 1.8rem;
+}
+
+.mobile-menu{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        border: none;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        z-index: 10;
+        transition: left 1s;
+        align-items: center;
+        padding-top: 100px;
+    }
+
+    .show{
+        left: 0;
+    }
+
+    .times{
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .login-form{
+    width: 80vw;
+    background-color: white; 
+    background: white;
+    color: black;
+    padding: 2.5rem 2rem;
+    border-radius: 5px;
+    position: relative;
+}
+
+  header section .container{
+    height: 90%;
+    width: 95vw;
+    /* width: 60%; */
+    /* padding: 0 6rem; */
+    grid-template-columns: auto;
+    padding-top: 50px;
+}
+
+.about-section{
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.about-section .container{
+  grid-template-columns: auto;
+  grid-column-gap: 0;
+  padding-right: 0;
+  width: 95vw;
+}
+
+.about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.about::after{
+  margin-left: 0;
+  width: 4rem;
+}
+
+.quest{
+  width: 80vw;
+}
+
+.contact-header{
+  height: 40vh;
+}
+
+  .contact-form{
+  width: 80vw;
+  padding: 1.5rem;
+}
+}
+
+@media screen and (max-width: 556px){
+
+.navbar .container{
+  width: 95vw;
+}
+
+h2{
+  font-size: 1.85rem;
+  line-height: 2.4rem;
+}
+
+.smaller{
+  font-size: 0.95rem;
+}
+
+p{
+  font-size: 0.9rem;
+}
+
+
+
+.globe{
+  width: 97%;
+} 
+
+.quest{
+  width: 93vw;
+  height: 70px;
+  padding: 0 1.3rem;
+}
+
+h5{
+  font-size: 0.8rem;
+}
+
+.contact-header{
+  height: 48vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.contact__subheading{
+  font-size: 1rem;
+}
+
+label{
+  font-size: 1rem;
+}
+
+.contact-form{
+  width: 90vw;
+  padding: 1.5rem;
+}
+
+.btn__form{
+  padding: 0.5rem;
+}
+
+
+.form__name {
+  display: grid;
+  grid-template-columns: auto;
+  grid-column-gap: 0;
+}
+
+.form__sub{
+  width: 100%;
+}
+
+footer{
+  padding-left: 2rem;
+}
+
+}
+
+@media screen and (max-width: 360px){
+  .contact-header{
+  height: 60vh;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+
+}
+
+@media screen and (max-width: 320px){
+  #firstname{
+  width: 100%;
+}
+
+#lastname{
+  width: 100%;
+}
+}
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <title>myOrigin</title>
+  </head>
+  <body>
+      <header id="app">
+          <nav class="navbar navbar-expand-lg bg-light px-md-5">
+            <div class="container">
+              <a class="navbar-brand fw-bold" href="#home-section">my<span class="brand-span">Origin</span></a>
+              <button class="navbar-toggler bg-transparent" type="button" @click="navigate">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+              </button>
+
+              <div class="collapse navbar-collapse d-flex flex-column flex-lg-row mobile-menu" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-lg-auto me-lg-5 mb-2 mb-lg-0 pb-1">
+                  <li class="nav-item me-lg-5 ">
+                    <a class="nav-link px-0 pb-0 active" aria-current="page" href="#home-section" @click="navigate">Home</a>
+                  </li>
+                  <li class="nav-item mt-3 mt-lg-0 me-lg-5">
+                    <a class="nav-link px-0 pb-0" href="#about-section" @click="navigate">About</a>
+                  </li>
+                  <li class="nav-item mt-3 mt-lg-0 me-lg-5">
+                    <a class="nav-link px-0 pb-0" href="#faq-section" @click="navigate">FAQ</a>
+                  </li>
+                  <li class="nav-item mt-3 mt-lg-0">
+                    <a class="nav-link px-0 pb-0" href="#contact-section" @click="navigate">Contact Us</a>
+                  </li>
+                </ul>
+                <div>
+                  <a href="#"><button class="btn btn-outline-success mt-5 mt-lg-0 border-2 fw-bold" type="button" @click="loginForm">Login</button></a>
+                </div>
+                <div class="times">
+                  <i class="fas fa-times" @click="navigate"></i>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <section class="px-md-5 header-section" id="home-section">
+            <div class="container">
+              <div class="pe-lg-5">
+                <h2 class="mb-4 fw-bold">Get Your <span class="important">Certificate Of Origin</span> From Anywhere In The World</h2>
+                <p class="smaller">
+                    Have you ever had difficulties getting your certificate of origin from your Local Government?
+                    We are here to take that load off your chest. With myOrigin, you can get yours right at the comfort of your home.
+                  </p>
+                  <div>
+                    <a href="./Register.html"><button class="btn get-btn" type="button">Get Certificate</button></a>
+                  </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-center my-5 my-lg-0">
+                  
+                  <img src="images/Free-Girl-Scout-Certificate-of-Appreciation-Template.jpeg" alt="" class="anime">
+              </div>
+            </div>
+             
+          </section>
+          <section class="login-section" v-show="login">
+            <form class="login-form">
+              <h4 class="mb-5 text-center fw-bold" >LOGIN HERE</h4>
+            <div class="mb-3 login-detail">
+              <label for="exampleInputEmail1" class="form-label me-2"><i class="fas fa-user"></i></label>
+              <input type="email"  placeholder="Email" aria-describedby="emailHelp">
+            </div>
+      
+            <div class="mb-3 login-detail">
+              <label for="exampleInputPassword1" class="form-label me-2"><i class="fas fa-lock"></i></label>
+              <input type="password" placeholder="Password">
+            </div>
+            <div class="mb-4 form-check d-flex align-items-center">
+              <input type="checkbox" class="form-check-input me-3" id="exampleCheck1">
+              <label class="form-check-label small">Remember me</label>
+            </div>
+            <button type="button" class="btn btn-success w-100">Login</button>
+            <div>
+              <p class="pt-2"><a href="#" class="text-secondary fw-bold text-decoration-underline">Forgot Password?</a></p>
+            </div>
+            <div class="mt-3">
+                <p class="mb-0 text-center">Don't have an account?</p>
+                <p class="text-center"><a href="./Register.html" class="text-secondary fw-bold text-decoration-underline">Register here</a></p>
+            </div>
+            <div>
+              <i class="fas fa-times close-login" @click="login = !login"></i>
+            </div>
+          </form>
+        </section>
+      </header>
+      <main>
+        <section class="about-section px-md-5" id="about-section">
+          <div class="container">
+            <div>
+              <img src="images/pexels-arpit-rastogi-4842861.jpg" alt="" class="globe">
+            </div>
+            <div class="pe-lg-3">
+              <h1 class="about">About</h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Laboriosam saepe distinctio alias cupiditate explicabo quaerat!
+                Ut obcaecati sed asperiores atque maiores ratione animi!
+                Laboriosam, illo fugiat vel animi sapiente explicabo?</p>
+                <p class="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Laboriosam saepe distinctio alias cupiditate explicabo quaerat!
+                  Ut obcaecati sed asperiores atque maiores ratione animi!
+                  Laboriosam, illo fugiat vel animi sapiente explicabo?</p>
+                  <p class="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Laboriosam saepe distinctio alias cupiditate explicabo quaerat!
+                    Ut obcaecati sed asperiores atque maiores ratione animi!
+                    Laboriosam, illo fugiat vel animi sapiente explicabo?</p>
+                    <p class="mt-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Laboriosam saepe distinctio alias cupiditate explicabo quaerat!
+                    Ut obcaecati sed asperiores atque maiores ratione animi!
+                     Laboriosam, illo fugiat vel animi sapiente explicabo?</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="faq-section" id="faq-section">
+          <div class="container d-flex flex-column align-items-center justify-content-center">
+            <h1 class="faq">FAQ</h1>
+            <div class="quest"><h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5><span><i class="fas fa-plus"></i></span></div>
+            <div class="quest"><h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5><span><i class="fas fa-plus"></i></span></div>
+            <div class="quest"><h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5><span><i class="fas fa-plus"></i></span></div>
+            <div class="quest"><h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5><span><i class="fas fa-plus"></i></span></div>
+            <div class="quest"><h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h5><span><i class="fas fa-plus"></i></span></div>
+        </section>
+        <section class="contact-section" id="contact-section">
+          <div class="contact">
+            <div class="contact-header">
+              <h1 class="contact__heading">Contact Us</h1>
+              <p class="contact__subheading">
+                Feel Free To contact us anytime.<br/> We will get back to you as soon
+                as we can
+              </p>
+              <!-- <div class="custom-shape-divider-bottom-1623246830">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path>
+                </svg>
+            </div> -->
+            </div>
+            <section class="contact__section">
+              <div class="form__area">
+                <form action="" class="contact-form">
+                  <div class="form__name">
+                    <div class="form__sub">
+                      <label for="firstname">First Name <span class="text-danger">*</span></label>
+                      <input
+                        id="firstname"
+                        name="firstname"
+                        type="text"
+                        class="message1"
+                        required
+                      />
+                    </div>
+                    <div class="form__sub">
+                      <label for="lastname">Last Name <span class="text-danger">*</span></label>
+                      <input
+                        id="lastname"
+                        name="lastname"
+                        type="text"
+                        class="message1"
+                        required
+                      />
+                    </div>
+                  </div>
+      
+                  <div class="form__sub">
+                    <label for="email">EMAIL <span class="text-danger">*</span> </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="text"
+                      class="message1"
+                      required
+                    />
+                  </div>
+                  <div class="form__sub">
+                    <label for="message">Message <span class="text-danger">*</span></label>
+                    <input
+                      id="message"
+                      name="message"
+                      type="text"
+                      required
+                      class="message"
+                    />
+                  </div>
+                  <button class="btn__form">Send Message</button>
+                  </div>
+                </form>
+              </div>
+        </section>
+      </main>
+      <footer class="px-md-5 pt-2">
+        <div class="terms">
+          <span class="me-5"><a href="#" class="text-light">Terms of service</a></span>
+          <span><a href="#" class="text-light">Privacy policy</a></span>
+        </div>
+        <div class="copyright mt-4">
+            <p>copyright&copy;2021 myOrigin</p>
+        </div>
+    </footer>
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      var vm = new Vue({
+    el: "#app",
+
+    data: {
+      login: false,
+    },
+
+    methods: {
+      navigate(){
+        nav = document.getElementById("navbarNavDropdown");
+        nav.classList.toggle("show")
+      },
+
+      loginForm(){
+        this.login = true;
+        nav = document.getElementById("navbarNavDropdown");
+        nav.classList.toggle("show")
+      }
+    },
+  })
+    </script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
